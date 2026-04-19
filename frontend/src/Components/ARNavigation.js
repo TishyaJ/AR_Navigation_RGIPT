@@ -5,8 +5,8 @@ import "./ARNavigation.css";
 const USE_FAKE_LOCATION = false;
 const FAKE_LOCATION = {
   coords: {
-    latitude: 12.923383,   // ISE Dept RVCE
-    longitude: 77.501071,
+    latitude: 26.221200,   // Academic Block 1, RGIPT
+    longitude: 81.548100,
     accuracy: 10
   }
 };

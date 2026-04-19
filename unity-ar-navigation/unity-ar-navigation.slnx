@@ -1,0 +1,4 @@
+﻿<Solution>
+  <Project Path="CampusNavigator.AR.Editor.csproj" />
+  <Project Path="CampusNavigator.AR.csproj" />
+</Solution>

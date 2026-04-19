@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using CampusNavigator.AR;
 
 /// <summary>
-/// Builds a complete 3D model of RVCE Campus matching the campus map
-/// Menu: Campus Navigator > Build RVCE Campus 3D Model
+/// Builds a complete 3D model of RGIPT Campus (Rajiv Gandhi Institute of Petroleum Technology)
+/// Menu: Campus Navigator > Build RGIPT Campus 3D Model
 /// </summary>
-public class RVCECampusBuilder : EditorWindow
+public class RGIPTCampusBuilder : EditorWindow
 {
     // Campus dimensions (in Unity units, scaled from map)
     private const float CAMPUS_WIDTH = 200f;
@@ -55,19 +55,19 @@ public class RVCECampusBuilder : EditorWindow
         return mat;
     }
     
-    [MenuItem("Campus Navigator/Build RVCE Campus 3D Model")]
+    [MenuItem("Campus Navigator/Build RGIPT Campus 3D Model")]
     public static void ShowWindow()
     {
-        GetWindow<RVCECampusBuilder>("RVCE Campus Builder");
+        GetWindow<RGIPTCampusBuilder>("RGIPT Campus Builder");
     }
     
     private void OnGUI()
     {
-        GUILayout.Label("RVCE Campus 3D Model Builder", EditorStyles.boldLabel);
+        GUILayout.Label("RGIPT Campus 3D Model Builder", EditorStyles.boldLabel);
         GUILayout.Space(10);
         
-        GUILayout.Label("This will create a complete 3D model of RVCE Campus", EditorStyles.wordWrappedLabel);
-        GUILayout.Label("including all buildings, roads, gardens, and sports grounds.", EditorStyles.wordWrappedLabel);
+        GUILayout.Label("This will create a complete 3D model of RGIPT Campus", EditorStyles.wordWrappedLabel);
+        GUILayout.Label("(Rajiv Gandhi Institute of Petroleum Technology) including all buildings, roads, gardens, and sports grounds.", EditorStyles.wordWrappedLabel);
         GUILayout.Space(20);
         
         if (GUILayout.Button("Build Campus Model", GUILayout.Height(40)))
@@ -85,21 +85,21 @@ public class RVCECampusBuilder : EditorWindow
     
     private static void ClearCampus()
     {
-        GameObject existing = GameObject.Find("RVCE_Campus");
+        GameObject existing = GameObject.Find("RGIPT_Campus");
         if (existing != null)
         {
             DestroyImmediate(existing);
-            Debug.Log("Cleared existing campus model.");
+            Debug.Log("Cleared existing RGIPT campus model.");
         }
     }
     
-    [MenuItem("Campus Navigator/Build RVCE Campus 3D Model (Quick)", false, 100)]
+    [MenuItem("Campus Navigator/Build RGIPT Campus 3D Model (Quick)", false, 100)]
     public static void BuildCampus()
     {
         ClearCampus();
         
         // Create root object
-        GameObject campus = new GameObject("RVCE_Campus");
+        GameObject campus = new GameObject("RGIPT_Campus");
         campus.transform.position = Vector3.zero;
         
         // Create materials
@@ -133,7 +133,7 @@ public class RVCECampusBuilder : EditorWindow
         UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(
             UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene());
         
-        Debug.Log("RVCE Campus 3D Model built successfully!");
+        Debug.Log("RGIPT Campus 3D Model built successfully!");
         
         // Focus on campus
         Selection.activeGameObject = campus;
@@ -248,130 +248,80 @@ public class RVCECampusBuilder : EditorWindow
         
         // === TOP ROW (North) ===
         
-        // Design Thinking Huddle (top-left corner)
-        CreateBuilding(buildings.transform, "Design Thinking Huddle", 
-            new Vector3(-75, 0, 75), new Vector3(18, SMALL_BUILDING_HEIGHT, 12), accentMaterial);
+        // Campus Gate / Main Entrance
+        CreateBuilding(buildings.transform, "Campus Gate",
+            new Vector3(-5, 0, 90), new Vector3(18, 3, 6), accentMaterial);
         
-        // Mechanical Dept
-        CreateBuilding(buildings.transform, "Mechanical Dept", 
-            new Vector3(-75, 0, 58), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
-        
-        // Admin Block (large)
-        CreateBuilding(buildings.transform, "ADMIN BLOCK", 
+        // Administrative Block (large)
+        CreateBuilding(buildings.transform, "Administrative Block",
             new Vector3(-40, 0, 55), new Vector3(35, BUILDING_HEIGHT + 2, 25), buildingMaterial);
         
         // Security Cabin
-        CreateBuilding(buildings.transform, "Security", 
+        CreateBuilding(buildings.transform, "Security",
             new Vector3(-5, 0, 78), new Vector3(8, 3, 6), buildingMaterial);
         
-        // Kotak Mahindra Bank
-        CreateBuilding(buildings.transform, "Kotak Mahindra Bank", 
-            new Vector3(25, 0, 78), new Vector3(15, 4, 8), buildingMaterial);
+        // Academic Block 1 (large, prominent)
+        CreateBuilding(buildings.transform, "Academic Block 1",
+            new Vector3(10, 0, 38), new Vector3(30, BUILDING_HEIGHT + 2, 25), buildingMaterial);
         
-        // Civil Dept
-        CreateBuilding(buildings.transform, "Civil Dept", 
+        // Academic Block 2
+        CreateBuilding(buildings.transform, "Academic Block 2",
             new Vector3(30, 0, 55), new Vector3(25, BUILDING_HEIGHT, 20), buildingMaterial);
         
         // === SECOND ROW ===
         
-        // Founder Statue area
-        CreateBuilding(buildings.transform, "Founder Statue", 
-            new Vector3(-85, 0, 40), new Vector3(5, 6, 5), accentMaterial);
+        // Petroleum Engineering Dept
+        CreateBuilding(buildings.transform, "Petroleum Engg Dept",
+            new Vector3(-55, 0, 35), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
         
-        // Biotech Quadrangle
-        CreateBuilding(buildings.transform, "Biotech Quadrangle", 
-            new Vector3(-85, 0, 25), new Vector3(15, SMALL_BUILDING_HEIGHT, 15), accentMaterial);
-        
-        // IEM Auditorium
-        CreateBuilding(buildings.transform, "IEM Auditorium", 
-            new Vector3(-55, 0, 35), new Vector3(15, BUILDING_HEIGHT, 12), buildingMaterial);
-        
-        // KRIYAKALPA
-        CreateBuilding(buildings.transform, "KRIYAKALPA", 
+        // Chemical Engineering Dept
+        CreateBuilding(buildings.transform, "Chemical Engg Dept",
             new Vector3(-35, 0, 35), new Vector3(18, BUILDING_HEIGHT, 12), buildingMaterial);
         
-        // EEE Dept
-        CreateBuilding(buildings.transform, "EEE Dept", 
-            new Vector3(10, 0, 38), new Vector3(20, BUILDING_HEIGHT, 18), buildingMaterial);
+        // Computer Science Dept
+        CreateBuilding(buildings.transform, "Computer Science Dept",
+            new Vector3(75, 0, 22), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
+
+        // Research Block
+        CreateBuilding(buildings.transform, "Research Block",
+            new Vector3(75, 0, 40), new Vector3(18, SMALL_BUILDING_HEIGHT, 12), buildingMaterial);
         
         // === THIRD ROW ===
         
-        // RV University
-        CreateBuilding(buildings.transform, "RV University", 
-            new Vector3(-55, 0, 18), new Vector3(12, SMALL_BUILDING_HEIGHT, 10), buildingMaterial);
-        
-        // Thoda Aur Canteen
-        CreateBuilding(buildings.transform, "Thoda Aur Canteen", 
-            new Vector3(-40, 0, 18), new Vector3(10, 4, 8), buildingMaterial);
-        
-        // ECE Dept (large)
-        CreateBuilding(buildings.transform, "ECE Dept", 
-            new Vector3(-5, 0, 15), new Vector3(30, BUILDING_HEIGHT + 2, 25), buildingMaterial);
-        
-        // PE & Sports Dept
-        CreateBuilding(buildings.transform, "PE & Sports Dept", 
-            new Vector3(75, 0, 40), new Vector3(18, SMALL_BUILDING_HEIGHT, 12), buildingMaterial);
-        
-        // CSE Dept
-        CreateBuilding(buildings.transform, "CSE Dept", 
-            new Vector3(75, 0, 22), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
-        
-        // Health Centre
-        CreateBuilding(buildings.transform, "Health Centre", 
-            new Vector3(75, 0, 5), new Vector3(18, SMALL_BUILDING_HEIGHT, 10), buildingMaterial);
-        
-        // Temple
-        CreateBuilding(buildings.transform, "Temple", 
-            new Vector3(85, 0, -8), new Vector3(10, 6, 10), accentMaterial);
-        
-        // === FOURTH ROW ===
-        
-        // Green House
-        CreateBuilding(buildings.transform, "GREEN HOUSE", 
-            new Vector3(-85, 0, 0), new Vector3(15, 4, 15), accentMaterial);
-        
-        // Parking 1
-        CreateBuilding(buildings.transform, "Parking 1", 
-            new Vector3(-60, 0, -5), new Vector3(8, 1, 12), roadMaterial);
-        
-        // Parking 2
-        CreateBuilding(buildings.transform, "Parking 2", 
-            new Vector3(-50, 0, -5), new Vector3(8, 1, 12), roadMaterial);
-        
-        // Chem Engg & Physics Dept
-        CreateBuilding(buildings.transform, "Chem Engg & Physics Dept", 
-            new Vector3(-55, 0, -20), new Vector3(25, BUILDING_HEIGHT, 15), buildingMaterial);
-        
-        // Telecommunication Dept
-        CreateBuilding(buildings.transform, "Telecommunication Dept", 
-            new Vector3(-20, 0, -20), new Vector3(22, BUILDING_HEIGHT, 15), buildingMaterial);
-        
-        // MINGOS Canteen
-        CreateBuilding(buildings.transform, "MINGOS Canteen", 
-            new Vector3(35, 0, -15), new Vector3(12, 4, 10), buildingMaterial);
-        
-        // Krishna Hostel
-        CreateBuilding(buildings.transform, "Krishna Hostel", 
-            new Vector3(75, 0, -22), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
-        
-        // === FIFTH ROW ===
-        
         // LIBRARY (large, prominent)
-        CreateBuilding(buildings.transform, "LIBRARY", 
+        CreateBuilding(buildings.transform, "LIBRARY",
             new Vector3(-55, 0, -45), new Vector3(30, BUILDING_HEIGHT + 3, 22), accentMaterial);
         
-        // ISE and Aerospace Dept
-        CreateBuilding(buildings.transform, "ISE & Aerospace Dept", 
-            new Vector3(-55, 0, -70), new Vector3(28, BUILDING_HEIGHT, 18), buildingMaterial);
+        // Auditorium
+        CreateBuilding(buildings.transform, "Auditorium",
+            new Vector3(-55, 0, 18), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
         
-        // Cauvery Boys Hostel
-        CreateBuilding(buildings.transform, "Cauvery Boys Hostel", 
+        // Seminar Hall
+        CreateBuilding(buildings.transform, "Seminar Hall",
+            new Vector3(-20, 0, -20), new Vector3(22, BUILDING_HEIGHT, 15), buildingMaterial);
+        
+        // Health Centre
+        CreateBuilding(buildings.transform, "Health Centre",
+            new Vector3(75, 0, 5), new Vector3(18, SMALL_BUILDING_HEIGHT, 10), buildingMaterial);
+        
+        // Canteen
+        CreateBuilding(buildings.transform, "Canteen",
+            new Vector3(35, 0, -15), new Vector3(12, 4, 10), buildingMaterial);
+        
+        // === FOURTH ROW (Hostels) ===
+        
+        // Boys Hostel
+        CreateBuilding(buildings.transform, "Boys Hostel",
+            new Vector3(75, 0, -22), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
+        
+        // Girls Hostel
+        CreateBuilding(buildings.transform, "Girls Hostel",
             new Vector3(75, 0, -50), new Vector3(22, BUILDING_HEIGHT, 18), buildingMaterial);
         
         // === BOTTOM ROW ===
         
-        // Mathematics Dept
-        CreateBuilding(buildings.transform, "Mathematics Dept", 
+        // Mathematics & Sciences Dept
+        CreateBuilding(buildings.transform, "Mathematics & Sciences Dept",
             new Vector3(75, 0, -78), new Vector3(20, BUILDING_HEIGHT, 15), buildingMaterial);
     }
     

@@ -14,27 +14,26 @@ A Unity 6 (6000.0.62f1) project that replicates the AR navigation functionality 
 1. Unity will prompt you to import TMP Essentials - click **Import**
 2. Or manually: **Window → TextMeshPro → Import TMP Essential Resources**
 
-### Step 3: Build RVCE Campus 3D Model (One Click!)
-1. Go to **Campus Navigator → Build RVCE Campus 3D Model (Quick)**
+### Step 3: Build RGIPT Campus 3D Model (One Click!)
+1. Go to **Campus Navigator → Build RGIPT Campus 3D Model (Quick)**
 2. The entire 3D campus will be automatically generated! 🎉
-3. Save the scene: **Ctrl+S** → name it `RVCECampusScene`
+3. Save the scene: **Ctrl+S** → name it `RGIPTCampusScene`
 4. Done! ✅
 
 ---
 
-## 🏛️ RVCE Campus 3D Model
+## 🏛️ RGIPT Campus 3D Model
 
-The campus builder automatically creates a complete 3D model matching the RVCE campus layout:
+The campus builder automatically creates a complete 3D model matching the RGIPT campus layout:
 
 ### Buildings Included:
 | Area | Buildings |
 |------|-----------|
-| **North** | Design Thinking Huddle, Mechanical Dept, Admin Block, Civil Dept, Security, Kotak Bank |
-| **Central** | IEM Auditorium, KRIYAKALPA, EEE Dept, ECE Dept, Biotech Quadrangle |
-| **East** | PE & Sports Dept, CSE Dept, Health Centre, Temple, Krishna Hostel |
-| **South** | Library, ISE & Aerospace Dept, Chem Engg & Physics, Telecom Dept |
-| **Hostels** | Krishna Hostel, Cauvery Boys Hostel |
-| **Sports** | Football & Cricket Ground with field markings |
+| **North** | Campus Gate, Administrative Block, Academic Block 1, Academic Block 2, Security |
+| **Central** | Petroleum Engg Dept, Chemical Engg Dept, Seminar Hall, Auditorium, Computer Science Dept |
+| **East** | Research Block, Health Centre, Boys Hostel, Girls Hostel |
+| **South** | Library, Canteen, Mathematics & Sciences Dept |
+| **Sports** | Cricket/Football Ground with field markings |
 
 ### Features:
 - ✅ **30+ Buildings** with accurate positions

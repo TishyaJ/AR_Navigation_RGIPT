@@ -31,9 +31,9 @@ namespace CampusNavigator.AR
         [SerializeField] private LineRenderer pathLine;
         
         [Header("GPS to World Mapping")]
-        [Tooltip("GPS coordinates of the model's origin point")]
-        [SerializeField] private double originLatitude = 12.923383;
-        [SerializeField] private double originLongitude = 77.501071;
+        [Tooltip("GPS coordinates of the RGIPT campus origin point (Jais, Amethi, UP)")]
+        [SerializeField] private double originLatitude = 26.221200;   // Academic Block 1, RGIPT
+        [SerializeField] private double originLongitude = 81.548100;  // RGIPT Campus, Jais, Amethi
         [Tooltip("Scale: meters per Unity unit")]
         [SerializeField] private float metersPerUnit = 1f;
         [Tooltip("Rotation offset in degrees (if model North != Unity Z+)")]

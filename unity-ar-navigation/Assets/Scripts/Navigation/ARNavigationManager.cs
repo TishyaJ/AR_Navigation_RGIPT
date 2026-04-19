@@ -27,8 +27,8 @@ namespace CampusNavigator.AR
 
         [Header("Demo Mode")]
         [SerializeField] private bool useFakeLocation = false;
-        [SerializeField] private double fakeLatitude = 12.923383;
-        [SerializeField] private double fakeLongitude = 77.501071;
+        [SerializeField] private double fakeLatitude = 26.221200;  // Academic Block 1, RGIPT
+        [SerializeField] private double fakeLongitude = 81.548100; // RGIPT Campus, Jais, Amethi
 
         // Navigation state
         private Location destination;

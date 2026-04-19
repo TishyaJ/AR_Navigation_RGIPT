@@ -2,7 +2,7 @@
 <aiml version="1.0.1">
     <category>
         <pattern>HELLO</pattern>
-        <template>Hello! How can I assist you with campus navigation today?</template>
+        <template>Hello! How can I assist you with RGIPT campus navigation today?</template>
     </category>
     
     <category>
@@ -12,91 +12,91 @@
     
     <category>
         <pattern>WHAT IS YOUR NAME</pattern>
-        <template>I'm your Campus Navigator Assistant! I can help you find locations around campus.</template>
+        <template>I'm your RGIPT Campus Navigator Assistant! I can help you find locations around Rajiv Gandhi Institute of Petroleum Technology.</template>
     </category>
     
     <category>
-        <pattern>WHICH BANK IS IN COLLEGE</pattern>
-        <template>The campus has a Kotak Bank branch located near the Main gate.</template>
+        <pattern>WHERE IS ACADEMIC BLOCK 1</pattern>
+        <template>Academic Block 1 is located in the central area of the RGIPT campus, near the main road.</template>
     </category>
     
     <category>
-        <pattern>WHAT ARE THE WORKING HOURS OF THE POST OFFICE</pattern>
-        <template>The post office operates from 9:00 AM to 5:00 PM.</template>
+        <pattern>WHERE IS ACADEMIC BLOCK 2</pattern>
+        <template>Academic Block 2 is situated adjacent to Academic Block 1, towards the eastern part of the RGIPT campus.</template>
     </category>
     
     <category>
-        <pattern>WHERE IS THE CIVIL SEMINAR HALL</pattern>
-        <template>The Civil Seminar Hall is located on the third floor of the Civil Department.</template>
+        <pattern>WHERE IS THE CAMPUS GATE</pattern>
+        <template>The Campus Gate is the main entrance to RGIPT, located at the front of the campus on the main road.</template>
     </category>
     
     <category>
         <pattern>HOW MANY HOSTELS ARE THERE FOR BOYS</pattern>
-        <template>There are three hostels available for boys.</template>
+        <template>There are hostels available for boys within the RGIPT campus. Please check with the administration for the latest details.</template>
     </category>
     
     <category>
         <pattern>HOW MANY HOSTELS ARE THERE FOR GIRLS</pattern>
-        <template>There are two hostels within the campus and one located outside the campus for girls.</template>
+        <template>There are hostels available for girls within the RGIPT campus. Please contact the administration for the latest information.</template>
     </category>
     
     <category>
-        <pattern>WHAT FOOD OPTIONS ARE AVAILABLE IN THE MINI CANTEEN</pattern>
-        <template>The mini canteen offers a variety of vegetarian and eggetarian snacks along with beverages.</template>
+        <pattern>WHAT FOOD OPTIONS ARE AVAILABLE IN THE CANTEEN</pattern>
+        <template>The RGIPT canteen offers a variety of vegetarian and non-vegetarian meals, snacks, and beverages throughout the day.</template>
     </category>
     
     <category>
-        <pattern>WHERE IS THE WIC COE</pattern>
-        <template>The WIC COE is located on the first floor of the ISE Department.</template>
+        <pattern>WHERE IS THE SEMINAR HALL</pattern>
+        <template>The Seminar Hall is located inside Academic Block 1 at RGIPT. Take the stairs to the first floor after entering the block.</template>
     </category>
     
     <category>
-        <pattern>WHERE IS THE ISE SEMINAR HALL</pattern>
-        <template>The ISE Seminar Hall is located on the second floor of the ISE Department building.</template>
-    </category>
-    
-    <category>
-        <pattern>HOW TO REACH THE ISE SEMINAR HALL</pattern>
-        <template>To reach the ISE Seminar Hall, go to the ISE Department building and take the stairs or elevator to the second floor.</template>
+        <pattern>HOW TO REACH THE SEMINAR HALL</pattern>
+        <template>To reach the Seminar Hall, go to Academic Block 1 at RGIPT, enter through the main door, and take the stairs or elevator to the first floor.</template>
     </category>
     
     <category>
         <pattern>WHERE IS THE LIBRARY</pattern>
-        <template>The library is located in the central academic block, near the main entrance.</template>
+        <template>The RGIPT library is located in the central academic block, near the main entrance of the campus.</template>
     </category>
     
     <category>
         <pattern>WHEN DOES THE LIBRARY OPEN</pattern>
-        <template>The library opens at 8:30 AM and closes at 5:00 PM on weekdays.</template>
+        <template>The RGIPT library opens at 8:30 AM and closes at 5:00 PM on weekdays.</template>
     </category>
     
     <category>
         <pattern>WHERE IS THE CANTEEN</pattern>
-        <template>The canteen is located near the student activity center.</template>
+        <template>The RGIPT canteen is located near the student activity area, between Academic Block 1 and the hostels.</template>
     </category>
     
     <category>
         <pattern>WHAT IS AVAILABLE IN THE CANTEEN</pattern>
-        <template>The canteen offers a variety of snacks, beverages, and meals, including vegetarian and non-vegetarian options.</template>
+        <template>The RGIPT canteen offers a variety of snacks, beverages, and meals, including vegetarian and non-vegetarian options.</template>
     </category>
     
     <category>
         <pattern>WHERE IS THE SPORTS COMPLEX</pattern>
-        <template>The sports complex is situated near the hostel area, next to the football ground.</template>
+        <template>The RGIPT sports complex is situated near the hostel area, next to the open ground.</template>
     </category>
     
     <category>
         <pattern>WHAT FACILITIES ARE AVAILABLE IN THE SPORTS COMPLEX</pattern>
-        <template>The sports complex includes facilities for basketball, badminton, table tennis, and a fully equipped gym.</template>
+        <template>The RGIPT sports complex includes facilities for cricket, badminton, table tennis, basketball, and a fully equipped gym.</template>
     </category>
     
     <category>
         <pattern>WHERE IS THE ADMINISTRATIVE OFFICE</pattern>
-        <template>The administrative office is located on the ground floor of the main academic building.</template>
+        <template>The administrative office is located in the Administrative Block, on the ground floor near the Campus Gate.</template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS RGIPT</pattern>
+        <template>RGIPT stands for Rajiv Gandhi Institute of Petroleum Technology. It is a premier technical institution dedicated to petroleum technology and energy studies, located in Jais, Amethi, Uttar Pradesh.</template>
     </category>
     
     <category>
         <pattern>*</pattern>
-        <template>If you need assistance with finding locations on campus, feel free to use our Campus Navigator system.</template>
+        <template>If you need assistance with finding locations on the RGIPT campus, feel free to use our Campus Navigator system.</template>
     </category>
 </aiml>

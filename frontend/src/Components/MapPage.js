@@ -13,8 +13,8 @@ import { API_ENDPOINTS } from "../config/apiConfig";
 const USE_FAKE_LOCATION = false;
 const FAKE_LOCATION = {
   coords: {
-    latitude: 12.923383,   // ISE Dept RVCE
-    longitude: 77.501071,
+    latitude: 26.221200,   // Academic Block 1, RGIPT
+    longitude: 81.548100,
     accuracy: 10,
     speed: 1.5
   }
@@ -23,7 +23,7 @@ const FAKE_LOCATION = {
 // Helper function to get location (fake or real)
 const getFakeOrRealLocation = (successCallback, errorCallback, options) => {
   if (USE_FAKE_LOCATION) {
-    console.log("📍 Using fake location: ISE Dept RVCE");
+    console.log("📍 Using fake location: Academic Block 1, RGIPT");
     setTimeout(() => successCallback(FAKE_LOCATION), 100);
     return;
   }
@@ -494,7 +494,7 @@ const MapPage = ({ coordinates, locationData, onPlaceSelected }) => {
     const mapInstance = L.map("map", {
       zoomControl: true,
       attributionControl: true
-    }).setView(coordinates || [12.924870, 77.499360], 16);
+    }).setView(coordinates || [26.221200, 81.548100], 16);
     
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',

@@ -13,9 +13,9 @@ namespace CampusNavigator.AR
     public class ARNavigationBootstrap : MonoBehaviour
     {
         [Header("Navigation Settings")]
-        [SerializeField] private string destinationName = "Main Building";
-        [SerializeField] private double destinationLatitude = 12.923383;
-        [SerializeField] private double destinationLongitude = 77.501071;
+        [SerializeField] private string destinationName = "Academic Block 1";
+        [SerializeField] private double destinationLatitude = 26.221200;
+        [SerializeField] private double destinationLongitude = 81.548100;
         
         [Header("References (Auto-created if null)")]
         [SerializeField] private ARNavigationManager navigationManager;
@@ -48,7 +48,7 @@ namespace CampusNavigator.AR
                 );
             }
             
-            Debug.Log($"AR Navigation initialized. Destination: {destinationName}");
+            Debug.Log($"RGIPT AR Navigation initialized. Destination: {destinationName}");
         }
         
         private void EnsureComponentsExist()
