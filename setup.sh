@@ -9,7 +9,7 @@ echo ""
 
 # Check if .env exists
 if [ ! -f .env ]; then
-    echo "Creating .env file from template..."
+    echo "Creating .env file from example env..."
     cp .env.example .env
     echo "✓ Created .env file"
 else

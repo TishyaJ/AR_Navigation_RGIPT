@@ -1,285 +1,78 @@
-#  Campus Navigator
+# AR Navigation for RGIPT: CampusAR_BrowserPath
+> Developed by Tishya Jha
 
-An intelligent campus navigation system that helps students, visitors, and staff find buildings, departments, and popular spots on campus quickly and easily.
+An Augmented Reality (AR) pathfinding and navigation application designed specifically for the Rajiv Gandhi Institute of Petroleum Technology (RGIPT) campus. This application bridges 3D spatial mapping with real-time AR camera feeds to provide users with an intuitive, glowing path to their destination directly on their smartphone screens.
 
----
+## ✨ Features
+* **Real-Time AR Pathfinding:** Utilizes Unity's NavMesh system combined with ARCore to calculate and draw optimal routes on the physical ground.
+* **Dynamic Indicator Path:** An emission-based Line Renderer dynamically updates as the user moves, providing a clear visual guide.
+* **Top-Down Minimap:** Features an "eye-in-the-sky" render texture UI that tracks the player's real-time position within the 3D campus model.
+* **Intuitive UI:** Simple destination selection menu to seamlessly trigger coordinate routing.
 
-##  Table of Contents
+## 📍 Current Campus Coverage
+*Note: This project is in active development. The 3D geometry scaling, occlusion mapping, and NavMesh baking have currently been updated and implemented exclusively for:*
+* **Academic Block 1**
+* **Academic Block 2**
 
-- [Problem Statement](#-problem-statement)
-- [Solution](#-solution)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Installation](#-installation)
-- [API Endpoints](#-api-endpoints)
-- [Project Structure](#-project-structure)
-
----
-
-##  Problem Statement
-
-### Challenges Faced by Campus Visitors & Students
-
-| Challenge | Description |
-|-----------|-------------|
-| **Navigation Difficulty** | New students, visitors, and parents struggle to find specific buildings, departments, or facilities on large college campuses |
-| **Lack of Real-time Assistance** | Traditional campus maps are static and don't provide interactive guidance |
-| **Information Accessibility** | Finding information about department locations, seminar halls, hostels is fragmented |
-| **No Personalized Help** | Users cannot ask natural language questions and get immediate responses |
-| **Mobile Accessibility** | Existing solutions often don't work well on mobile devices |
+*(Further buildings, roads, and hostel blocks will be integrated into the NavMesh in future updates).*
 
 ---
 
-##  Solution
-
-**Campus Navigator** is a full-stack web application that provides:
-
-| Solution | Benefit |
-|----------|---------|
-|  **Interactive Map** | Visual navigation with Leaflet/Google Maps |
-|  **Smart Search** | Autocomplete-enabled search for locations |
-|  **AI Chatbot** | Natural language queries using semantic similarity |
-|  **Popular Places** | Dynamic tracking of frequently searched locations |
-|  **AR Navigation** | Augmented reality overlays for real-world navigation |
-|  **Mobile-Responsive** | Works on phones, tablets, and desktops |
+## 🛠️ Tech Stack
+* **Game Engine:** Unity 3D (Core Built-In Render Pipeline)
+* **AR Framework:** AR Foundation & Google ARCore
+* **Language:** C#
+* **Pathfinding:** Unity AI Navigation (NavMesh Surface)
 
 ---
 
-##  Features
+## 🚀 Getting Started: How to Run Locally
 
-###  Interactive Campus Map
-- Leaflet maps with campus overlay
-- Real-time GPS location tracking
-- Visual markers for all campus buildings
-- Turn-by-turn navigation
+If you are pulling this repository to test or contribute, please follow this strict workflow to ensure the AR packages and materials compile correctly.
 
-###  Smart Search
-- **Autocomplete suggestions** as you type
-- **Fuzzy matching** for location names
-- Debounced API calls for performance
-
-###  AI Chatbot Assistant
-- **Semantic similarity matching** using Sentence Transformers
-- **all-MiniLM-L6-v2** model (384-dim embeddings)
-- AIML pattern matching fallback
-- Context-aware responses
-
-###  AR Navigation
-- Camera-based augmented reality view
-- Compass heading for direction
-- Distance overlay to destination
-- Real-time position updates
-
-###  Popular Places
-- Tracks most searched locations
-- Dynamic ranking based on user interest
-- Quick access buttons
-
----
-
-##  Tech Stack
-
-### Frontend
-| Technology | Purpose |
-|------------|---------|
-| **React.js 18** | UI Framework |
-| **React Router v6** | Navigation |
-| **Axios** | HTTP Client |
-| **Leaflet** | Map Rendering |
-| **CSS3** | Styling |
-
-### Backend
-| Technology | Purpose |
-|------------|---------|
-| **Flask 3.x** | Web Framework |
-| **Flask-CORS** | Cross-Origin Requests |
-| **Gunicorn** | Production Server |
-| **Transformers** | NLP Models |
-| **PyTorch** | ML Framework |
-| **AIML** | Pattern Chatbot |
-
-### AI/ML Components
-| Component | Technology |
-|-----------|------------|
-| **Semantic Search** | sentence-transformers/all-MiniLM-L6-v2 |
-| **Embeddings** | 384-dimensional vectors |
-| **Similarity** | Cosine Similarity (threshold: 0.7) |
-| **Lazy Loading** | Memory optimization |
-
----
-
-##  Architecture
-
-```
-
-                    FRONTEND (React.js)                       
-         
-   Navbar     Search     MapPage    Chatbot/AR Nav   
-         
-                  
-                     Axios HTTP Client                        
-
-                              HTTP/HTTPS
-
-                    BACKEND (Flask)                           
-   
-                REST API Endpoints                          
-    /api/search    /api/top-places    /chat              
-   
-                                                           
-      
-   JSON Database   Location       Chatbot Module       
-   (locations,     Service          
-    searches)                   Semantic Model       
-      (Transformers)       
-                                        
-                                    AIML Patterns        
-                                        
-                                    
-
-```
-
----
-
-##  Installation
-
-### Prerequisites
-- Node.js 16+ and npm
-- Python 3.9+
-- Git
-
-### Backend Setup
-
+### 1. Clone the Repository
+Open your terminal or command prompt and run:
 ```bash
-cd backend
-python -m venv venv
-
-# Windows
-.\venv\Scripts\activate
-
-# Linux/Mac
-source venv/bin/activate
-
-pip install -r requirements.txt
-python main.py
+git clone https://github.com/TishyaJ/AR_Navigation_RGIPT.git
 ```
 
-Backend runs at: **http://localhost:5001**
+### 2. Match the Unity Version (Crucial)
+To prevent the AR scripts from breaking or materials rendering as bright pink, you must use the exact Unity version this project was built on.
+* Navigate inside the cloned folder to `ProjectSettings > ProjectVersion.txt`.
+* Check the `m_EditorVersion` (e.g., `2022.3.15f1`).
+* Open **Unity Hub**. If you do not have that exact version, go to **Installs > Install Editor** and download it before proceeding.
 
-### Frontend Setup
+### 3. Open in Unity Hub
+* In Unity Hub, navigate to the **Projects** tab.
+* Click **Add** (or **Open**) in the top right.
+* Select the root folder of the cloned repository (make sure it contains the `Assets` and `ProjectSettings` folders).
+* *Note: Unity will take several minutes to open as it resolves the AR Foundation dependencies and re-bakes the NavMesh cache.*
 
-```bash
-cd frontend
-npm install
-npm start
-```
-
-Frontend runs at: **http://localhost:3000**
+### 4. Load the Main Scene
+When the editor loads, it may display a blank grid.
+* Navigate to the **Project** window at the bottom: `Assets > Scenes`.
+* Double-click the primary scene file (e.g., `RGIPT_AR_Map`).
+* The campus geometry, AR Origin, and UI Canvas will now populate your Hierarchy.
 
 ---
 
-##  API Endpoints
+## 🧠 System Architecture & Logic
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /api/search?q={query} | Search locations |
-| POST | /api/search | Record search (update popularity) |
-| GET | /api/top-places | Get top 5 popular places |
-| POST | /chat | Send message to AI chatbot |
+If you are reviewing the codebase, here is how the core systems interact:
 
-### Example Requests
-
-```bash
-# Search locations
-curl "http://localhost:5001/api/search?q=computer"
-
-# Get popular places
-curl "http://localhost:5001/api/top-places"
-
-# Chat with bot
-curl -X POST "http://localhost:5001/chat" \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Where is the library?"}'
-```
+* **The Brain (Pathfinding):** The RGIPT campus model acts as the environment. It utilizes a `NavMesh Surface` component to bake the walkable areas around Academic Blocks 1 and 2, ensuring paths don't route through solid walls or steep drops.
+* **The Path (Visuals):** The `Indicator` object sits at the user's origin point. It utilizes a `Line Renderer` component mapped to a custom C# script. Unity's `NavMesh.CalculatePath()` computes the corners of the route, which are then passed to the Line Renderer to draw the glowing trail.
+* **The Targets (Nodes):** Invisible Empty GameObjects serve as coordinate waypoints across the blocks. The UI Canvas buttons utilize `On Click()` events to pass these specific target coordinates into the navigation script, instantly updating the user's destination.
 
 ---
 
-##  Project Structure
+## 📱 Build and Deployment (Android)
 
-```
-campus-navigator/
- backend/
-    main.py                 # Flask entry point
-    config.py               # Configuration
-    requirements.txt        # Python dependencies
-    Dockerfile              # Container config
-    Procfile                # Deployment config
-    chatbot/
-       chat.py             # AIML handler
-       bot.aiml            # Chat patterns
-       semantic_model.py   # ML semantic search
-       questions.json      # FAQ knowledge base
-    *.json                  # Location databases
+Because this is an AR application, it cannot be tested directly in the Unity Editor play mode without a simulator. To test the navigation:
 
- frontend/
-    src/
-       App.js              # Main component
-       Components/
-          Navbar.js       # Navigation + search
-          Search.js       # Autocomplete search
-          MapPage.js      # Map + navigation
-          chatbot.js      # AI chat interface
-          ARScene.js      # AR navigation
-          ARNavigation.js # AR overlay
-       api/
-           geolocation.js  # GPS utilities
-    package.json
-
- README.md
-```
-
----
-
-##  Implementation Highlights
-
-### Semantic Search Algorithm
-```python
-# 1. Load pre-trained model (lazy loaded)
-model = "sentence-transformers/all-MiniLM-L6-v2"
-
-# 2. Generate 384-dim embedding for query
-user_embedding = get_embedding(user_query)
-
-# 3. Compare with FAQ using cosine similarity
-for question in FAQ:
-    similarity = cosine_similarity(user_embedding, question_embedding)
-    if similarity > 0.7:
-        return get_answer(question)
-
-# 4. Fallback to AIML patterns
-return aiml_response(user_query)
-```
-
-### Memory Optimization
-- **Lazy loading**: ML models load only when chatbot is used
-- **Single worker**: Gunicorn uses 1 worker for 512MB limit
-- Startup: ~100MB  After chatbot use: ~300MB
-
----
-
-##  Future Enhancements
-
-| Feature | Description |
-|---------|-------------|
-|  Voice Commands | Voice-based search |
-|  Indoor Mapping | Floor-by-floor navigation |
-|  Event Integration | Campus events & schedules |
-|  Multi-language | Regional language support |
-|  Accessibility | Screen reader support |
-
----
-
-
-
-
+1. Connect your Android device to your PC via USB.
+2. Ensure **Developer Options** and **USB Debugging** are enabled on your phone.
+3. In Unity, go to **File > Build Settings**.
+4. Verify the platform is set to **Android** (click "Switch Platform" if not).
+5. Click **Build and Run**.
+6. Unity will compile the project and install the `.apk` directly onto your device. Stand at the designated origin point on campus to test the AR overlay!
