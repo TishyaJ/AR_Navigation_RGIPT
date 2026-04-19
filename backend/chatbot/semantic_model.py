@@ -29,7 +29,7 @@ def _load_questions():
             _QUESTIONS = json.load(f)["questions"]
     return _QUESTIONS
 
-# Function to generate sentence embeddings
+# Function to generate sentence embeddings and their distance iwth each other
 def get_embedding(text):
     tokenizer, model = _load_model()
     tokens = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
